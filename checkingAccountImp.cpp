@@ -71,8 +71,7 @@ void checkingAccount::withdraw(double amount)
     if (balance < minimumBalance)
     {
         cout << "Balance below minimum. Service charge imposed." << endl;
-        bankAccount::withdraw(amount);
-        balance = balance - serviceCharge;
+        bankAccount::withdraw(amount + serviceCharge);
     }
     else
         bankAccount::withdraw(amount);
